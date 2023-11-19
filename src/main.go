@@ -19,9 +19,15 @@ func calculateCircleArea(r float64) {
 	fmt.Println("El área del circulo es:", circleArea)
 }
 
+func returnValues(a int) (c, d int) {
+	return a, a * 2
+}
+
 //En main epezará a correr en cónsola
 func main() {
 	calculateRectangleArea(5, 10)
 	calculateTrapezeArea(15, 12, 6)
 	calculateCircleArea(10)
+	value1, value2 := returnValues(15)
+	fmt.Println("value", value1, value2 )
 }
