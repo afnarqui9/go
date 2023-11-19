@@ -1,34 +1,45 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"strconv"
-)
+import "fmt"
 
-func main()  {
-	if isPair(6) {
-		fmt.Println("Number is pair")
-	} else {
-		fmt.Println("Number is odd")
+func contadorVocales(palabra string)(int, int, int, int, int,){
+	conta := 0
+	conte := 0
+	conti := 0
+	conto := 0
+	contu := 0
+	for _ , valor := range palabra{ 
+		variable := string(valor)
+		switch variable {
+		case "a" :
+			conta++
+		case "e" :
+			conte++
+		case "i" :
+			conti++
+		case "o" :
+			conto++
+		case "u" :
+			contu++
+		}
 	}
-	if isValidUser("Alpha5", "MyPassword") {
-		fmt.Println("Credentials are valid")
-	} else {
-		fmt.Println("Credentials aren't valid")
-	}
-	//Converting strings to integers
-	value, err := strconv.Atoi("23") // Atoi is
-	if err != nil {
-		log.Fatal(err) //Fatal is equivalent to Print() followed by a call to os.Exit(1).
-	}
-	fmt.Println(value)
+
+	fmt.Println("Inicio")
+	for i := 0; i < 5; i++ {
+	defer fmt.Println(i)
+ 	}
+ 	fmt.Println("Fin")	
+	return conta, conte , conti, conto, contu
 }
 
-func isPair(num int) bool {
-	return num % 2 == 0
-}
+func main() {
 
-func isValidUser(userName, pass string) bool {
-	return userName == "Alpha" && pass == "MyPassword"
+	palabra := "paramos de aprender"	
+	a,e,i,o,u := contadorVocales(palabra)
+	fmt.Printf("la frase '%s' tiene: \n",palabra)
+	fmt.Printf("%d vocales a \n",a)
+	fmt.Printf("%d vocales e \n",e)
+	fmt.Printf("%d vocales i \n",i)
+	fmt.Printf("%d vocales o \n",o)
+	fmt.Printf("%d vocales u \n",u)	
 }
